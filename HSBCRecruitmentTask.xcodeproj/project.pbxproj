@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
+		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
+		97D36FAD2560334000A59E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAC2560334000A59E3E /* ViewController.swift */; };
+		97D36FB02560334000A59E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FAE2560334000A59E3E /* Main.storyboard */; };
+		97D36FB22560334200A59E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB12560334200A59E3E /* Assets.xcassets */; };
+		97D36FB52560334200A59E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB32560334200A59E3E /* LaunchScreen.storyboard */; };
+		97D36FC02560334200A59E3E /* HSBCRecruitmentTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FBF2560334200A59E3E /* HSBCRecruitmentTaskTests.swift */; };
+		97D36FCB2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FCA2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97D36FBC2560334200A59E3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97D36F9D2560334000A59E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97D36FA42560334000A59E3E;
+			remoteInfo = HSBCRecruitmentTask;
+		};
+		97D36FC72560334200A59E3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97D36F9D2560334000A59E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97D36FA42560334000A59E3E;
+			remoteInfo = HSBCRecruitmentTask;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		97D36FAC2560334000A59E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97D36FAF2560334000A59E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97D36FB12560334200A59E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97D36FB42560334200A59E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97D36FB62560334200A59E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D36FBB2560334200A59E3E /* HSBCRecruitmentTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSBCRecruitmentTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D36FBF2560334200A59E3E /* HSBCRecruitmentTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBCRecruitmentTaskTests.swift; sourceTree = "<group>"; };
+		97D36FC12560334200A59E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D36FC62560334200A59E3E /* HSBCRecruitmentTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSBCRecruitmentTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D36FCA2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBCRecruitmentTaskUITests.swift; sourceTree = "<group>"; };
+		97D36FCC2560334200A59E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97D36FA22560334000A59E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D36FB82560334200A59E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D36FC32560334200A59E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97D36F9C2560334000A59E3E = {
+			isa = PBXGroup;
+			children = (
+				97D36FA72560334000A59E3E /* HSBCRecruitmentTask */,
+				97D36FBE2560334200A59E3E /* HSBCRecruitmentTaskTests */,
+				97D36FC92560334200A59E3E /* HSBCRecruitmentTaskUITests */,
+				97D36FA62560334000A59E3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97D36FA62560334000A59E3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */,
+				97D36FBB2560334200A59E3E /* HSBCRecruitmentTaskTests.xctest */,
+				97D36FC62560334200A59E3E /* HSBCRecruitmentTaskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97D36FA72560334000A59E3E /* HSBCRecruitmentTask */ = {
+			isa = PBXGroup;
+			children = (
+				97D36FA82560334000A59E3E /* AppDelegate.swift */,
+				97D36FAA2560334000A59E3E /* SceneDelegate.swift */,
+				97D36FAC2560334000A59E3E /* ViewController.swift */,
+				97D36FAE2560334000A59E3E /* Main.storyboard */,
+				97D36FB12560334200A59E3E /* Assets.xcassets */,
+				97D36FB32560334200A59E3E /* LaunchScreen.storyboard */,
+				97D36FB62560334200A59E3E /* Info.plist */,
+			);
+			path = HSBCRecruitmentTask;
+			sourceTree = "<group>";
+		};
+		97D36FBE2560334200A59E3E /* HSBCRecruitmentTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				97D36FBF2560334200A59E3E /* HSBCRecruitmentTaskTests.swift */,
+				97D36FC12560334200A59E3E /* Info.plist */,
+			);
+			path = HSBCRecruitmentTaskTests;
+			sourceTree = "<group>";
+		};
+		97D36FC92560334200A59E3E /* HSBCRecruitmentTaskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				97D36FCA2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift */,
+				97D36FCC2560334200A59E3E /* Info.plist */,
+			);
+			path = HSBCRecruitmentTaskUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97D36FA42560334000A59E3E /* HSBCRecruitmentTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D36FCF2560334200A59E3E /* Build configuration list for PBXNativeTarget "HSBCRecruitmentTask" */;
+			buildPhases = (
+				97D36FA12560334000A59E3E /* Sources */,
+				97D36FA22560334000A59E3E /* Frameworks */,
+				97D36FA32560334000A59E3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSBCRecruitmentTask;
+			productName = HSBCRecruitmentTask;
+			productReference = 97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */;
+			productType = "com.apple.product-type.application";
+		};
+		97D36FBA2560334200A59E3E /* HSBCRecruitmentTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D36FD22560334200A59E3E /* Build configuration list for PBXNativeTarget "HSBCRecruitmentTaskTests" */;
+			buildPhases = (
+				97D36FB72560334200A59E3E /* Sources */,
+				97D36FB82560334200A59E3E /* Frameworks */,
+				97D36FB92560334200A59E3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97D36FBD2560334200A59E3E /* PBXTargetDependency */,
+			);
+			name = HSBCRecruitmentTaskTests;
+			productName = HSBCRecruitmentTaskTests;
+			productReference = 97D36FBB2560334200A59E3E /* HSBCRecruitmentTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		97D36FC52560334200A59E3E /* HSBCRecruitmentTaskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D36FD52560334200A59E3E /* Build configuration list for PBXNativeTarget "HSBCRecruitmentTaskUITests" */;
+			buildPhases = (
+				97D36FC22560334200A59E3E /* Sources */,
+				97D36FC32560334200A59E3E /* Frameworks */,
+				97D36FC42560334200A59E3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97D36FC82560334200A59E3E /* PBXTargetDependency */,
+			);
+			name = HSBCRecruitmentTaskUITests;
+			productName = HSBCRecruitmentTaskUITests;
+			productReference = 97D36FC62560334200A59E3E /* HSBCRecruitmentTaskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97D36F9D2560334000A59E3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					97D36FA42560334000A59E3E = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					97D36FBA2560334200A59E3E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 97D36FA42560334000A59E3E;
+					};
+					97D36FC52560334200A59E3E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 97D36FA42560334000A59E3E;
+					};
+				};
+			};
+			buildConfigurationList = 97D36FA02560334000A59E3E /* Build configuration list for PBXProject "HSBCRecruitmentTask" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97D36F9C2560334000A59E3E;
+			productRefGroup = 97D36FA62560334000A59E3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97D36FA42560334000A59E3E /* HSBCRecruitmentTask */,
+				97D36FBA2560334200A59E3E /* HSBCRecruitmentTaskTests */,
+				97D36FC52560334200A59E3E /* HSBCRecruitmentTaskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97D36FA32560334000A59E3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D36FB52560334200A59E3E /* LaunchScreen.storyboard in Resources */,
+				97D36FB22560334200A59E3E /* Assets.xcassets in Resources */,
+				97D36FB02560334000A59E3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D36FB92560334200A59E3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D36FC42560334200A59E3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97D36FA12560334000A59E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D36FAD2560334000A59E3E /* ViewController.swift in Sources */,
+				97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */,
+				97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D36FB72560334200A59E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D36FC02560334200A59E3E /* HSBCRecruitmentTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D36FC22560334200A59E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D36FCB2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97D36FBD2560334200A59E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97D36FA42560334000A59E3E /* HSBCRecruitmentTask */;
+			targetProxy = 97D36FBC2560334200A59E3E /* PBXContainerItemProxy */;
+		};
+		97D36FC82560334200A59E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97D36FA42560334000A59E3E /* HSBCRecruitmentTask */;
+			targetProxy = 97D36FC72560334200A59E3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		97D36FAE2560334000A59E3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97D36FAF2560334000A59E3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		97D36FB32560334200A59E3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97D36FB42560334200A59E3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97D36FCD2560334200A59E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		97D36FCE2560334200A59E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97D36FD02560334200A59E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCNU46SB92;
+				INFOPLIST_FILE = HSBCRecruitmentTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paszek.HSBCRecruitmentTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97D36FD12560334200A59E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCNU46SB92;
+				INFOPLIST_FILE = HSBCRecruitmentTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paszek.HSBCRecruitmentTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		97D36FD32560334200A59E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCNU46SB92;
+				INFOPLIST_FILE = HSBCRecruitmentTaskTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paszek.HSBCRecruitmentTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HSBCRecruitmentTask.app/HSBCRecruitmentTask";
+			};
+			name = Debug;
+		};
+		97D36FD42560334200A59E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCNU46SB92;
+				INFOPLIST_FILE = HSBCRecruitmentTaskTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paszek.HSBCRecruitmentTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HSBCRecruitmentTask.app/HSBCRecruitmentTask";
+			};
+			name = Release;
+		};
+		97D36FD62560334200A59E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCNU46SB92;
+				INFOPLIST_FILE = HSBCRecruitmentTaskUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paszek.HSBCRecruitmentTaskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HSBCRecruitmentTask;
+			};
+			name = Debug;
+		};
+		97D36FD72560334200A59E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCNU46SB92;
+				INFOPLIST_FILE = HSBCRecruitmentTaskUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paszek.HSBCRecruitmentTaskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HSBCRecruitmentTask;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97D36FA02560334000A59E3E /* Build configuration list for PBXProject "HSBCRecruitmentTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D36FCD2560334200A59E3E /* Debug */,
+				97D36FCE2560334200A59E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97D36FCF2560334200A59E3E /* Build configuration list for PBXNativeTarget "HSBCRecruitmentTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D36FD02560334200A59E3E /* Debug */,
+				97D36FD12560334200A59E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97D36FD22560334200A59E3E /* Build configuration list for PBXNativeTarget "HSBCRecruitmentTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D36FD32560334200A59E3E /* Debug */,
+				97D36FD42560334200A59E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97D36FD52560334200A59E3E /* Build configuration list for PBXNativeTarget "HSBCRecruitmentTaskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D36FD62560334200A59E3E /* Debug */,
+				97D36FD72560334200A59E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97D36F9D2560334000A59E3E /* Project object */;
+}
