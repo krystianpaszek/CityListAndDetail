@@ -31,8 +31,11 @@ class DataStore: DataStoreProtocol {
 extension DataStore {
     func getCityList(reload: Bool, completion: @escaping ([City]?, Error?) -> Void) {
         guard let cities = cities, !reload else {
-            // it has to cache result here
-            networkService.fetchCityList(completion: completion)
+            networkService.fetchCityList { [weak self] (cities, error) in
+                self?.cities = cities?.reduce(into: [UUID: City](), { $0[$1.id] = $1 })
+                completion(cities, error)
+            }
+
             return
         }
 
@@ -50,9 +53,11 @@ extension DataStore {
     }
 
     func getCityPopulation(reload: Bool, id: UUID, completion: @escaping (CityPopulation?, Error?) -> Void) {
-        // it has to cache result here
         guard let cityPopulation = cities?[id]?.population, !reload else {
-            networkService.fetchCityPopulation(id: id, completion: completion)
+            networkService.fetchCityPopulation(id: id) { [weak self] cityPopulation, error in
+                self?.cities?[id]?.population = cityPopulation
+            }
+            
             return
         }
 
@@ -60,9 +65,11 @@ extension DataStore {
     }
 
     func getCityRating(reload: Bool, id: UUID, completion: @escaping (CityRating?, Error?) -> Void) {
-        // it has to cache result here
         guard let cityRating = cities?[id]?.rating, !reload else {
-            networkService.fetchCityRating(id: id, completion: completion)
+            networkService.fetchCityRating(id: id) { [weak self] cityRating, error in
+                self?.cities?[id]?.rating = cityRating
+            }
+
             return
         }
 
