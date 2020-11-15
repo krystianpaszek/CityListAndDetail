@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
 		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
-		97D36FAD2560334000A59E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAC2560334000A59E3E /* ViewController.swift */; };
+		97D36FAD2560334000A59E3E /* CitiesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAC2560334000A59E3E /* CitiesListController.swift */; };
 		97D36FB02560334000A59E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FAE2560334000A59E3E /* Main.storyboard */; };
 		97D36FB22560334200A59E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB12560334200A59E3E /* Assets.xcassets */; };
 		97D36FB52560334200A59E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB32560334200A59E3E /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97D36FAC2560334000A59E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97D36FAC2560334000A59E3E /* CitiesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListController.swift; sourceTree = "<group>"; };
 		97D36FAF2560334000A59E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97D36FB12560334200A59E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97D36FB42560334200A59E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,9 +99,9 @@
 		97D36FA72560334000A59E3E /* HSBCRecruitmentTask */ = {
 			isa = PBXGroup;
 			children = (
+				97D36FE1256150B100A59E3E /* Controllers */,
 				97D36FA82560334000A59E3E /* AppDelegate.swift */,
 				97D36FAA2560334000A59E3E /* SceneDelegate.swift */,
-				97D36FAC2560334000A59E3E /* ViewController.swift */,
 				97D36FAE2560334000A59E3E /* Main.storyboard */,
 				97D36FB12560334200A59E3E /* Assets.xcassets */,
 				97D36FB32560334200A59E3E /* LaunchScreen.storyboard */,
@@ -126,6 +126,14 @@
 				97D36FCC2560334200A59E3E /* Info.plist */,
 			);
 			path = HSBCRecruitmentTaskUITests;
+			sourceTree = "<group>";
+		};
+		97D36FE1256150B100A59E3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97D36FAC2560334000A59E3E /* CitiesListController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D36FAD2560334000A59E3E /* ViewController.swift in Sources */,
+				97D36FAD2560334000A59E3E /* CitiesListController.swift in Sources */,
 				97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */,
 				97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */,
 			);
