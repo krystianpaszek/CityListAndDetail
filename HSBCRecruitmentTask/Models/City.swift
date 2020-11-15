@@ -11,4 +11,7 @@ struct City: Identifiable, Decodable {
     let id: UUID
     let name: String
     let image: URL
+
+    var population: CityPopulation?
+    var rating: CityRating?
 }
