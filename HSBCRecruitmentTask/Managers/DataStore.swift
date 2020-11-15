@@ -18,7 +18,7 @@ class DataStore: DataStoreProtocol {
     private let favoritesManager: CityFavoriting
 
     // MARK: - State
-    var cities: [UUID: City]?
+    private var cities: [UUID: City]?
 
     // MARK: - Initialization
     init(networkService: NetworkServiceProtocol, favoritesManager: CityFavoriting) {
