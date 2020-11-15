@@ -1,5 +1,5 @@
 //
-//  NetworkServiceMock.swift
+//  MockNetworkService.swift
 //  HSBCRecruitmentTaskTests
 //
 //  Created by Krystian Paszek on 15/11/2020.
@@ -8,12 +8,14 @@
 @testable import HSBCRecruitmentTask
 import UIKit
 
-class NetworkServiceMock: NetworkServiceProtocol {
+class MockNetworkService: NetworkServiceProtocol {
 
+    // MARK: - Counters
     var fetchCityListInvocationCounter: Int = 0
     var fetchCityPopulationInvocationCounter: Int = 0
     var fetchCityRatingInvocationCounter: Int = 0
 
+    // MARK: - NetworkServiceProtocol
     func fetchCityList(completion: @escaping ([City]?, Error?) -> Void) {
         fetchCityListInvocationCounter += 1
 
