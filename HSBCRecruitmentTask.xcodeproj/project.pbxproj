@@ -19,6 +19,8 @@
 		97D37024256154D100A59E3E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D37022256154D000A59E3E /* DataStore.swift */; };
 		97D37025256154D100A59E3E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D37023256154D000A59E3E /* NetworkService.swift */; };
 		97D3702A2561552900A59E3E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D370292561552900A59E3E /* City.swift */; };
+		97D3702F2561590400A59E3E /* DataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3702E2561590400A59E3E /* DataStoreProtocol.swift */; };
+		97D370342561591100A59E3E /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D370332561591100A59E3E /* NetworkServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		97D37022256154D000A59E3E /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		97D37023256154D000A59E3E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		97D370292561552900A59E3E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		97D3702E2561590400A59E3E /* DataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreProtocol.swift; sourceTree = "<group>"; };
+		97D370332561591100A59E3E /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 		97D36FE2256151A600A59E3E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				97D3702E2561590400A59E3E /* DataStoreProtocol.swift */,
+				97D370332561591100A59E3E /* NetworkServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -305,7 +311,9 @@
 				97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */,
 				97D3701E256154C800A59E3E /* CityDetailController.swift in Sources */,
 				97D3701D256154C800A59E3E /* CityListController.swift in Sources */,
+				97D3702F2561590400A59E3E /* DataStoreProtocol.swift in Sources */,
 				97D37024256154D100A59E3E /* DataStore.swift in Sources */,
+				97D370342561591100A59E3E /* NetworkServiceProtocol.swift in Sources */,
 				97D37025256154D100A59E3E /* NetworkService.swift in Sources */,
 				97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */,
 				97D3702A2561552900A59E3E /* City.swift in Sources */,
