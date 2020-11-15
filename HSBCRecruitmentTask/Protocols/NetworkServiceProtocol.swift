@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func fetchCityList(completion: @escaping ([City]) throws -> Void)
-    func fetchCityPopulation(id: String, completion: @escaping (Int) throws -> Void)
-    func fetchCityRating(id: String, completion: @escaping (Float) throws -> Void)
+    func fetchCityList(completion: @escaping ([City]?, Error?) -> Void)
+    func fetchCityPopulation(id: UUID, completion: @escaping (CityPopulation?, Error?) -> Void)
+    func fetchCityRating(id: UUID, completion: @escaping (CityRating?, Error?) -> Void)
 }
