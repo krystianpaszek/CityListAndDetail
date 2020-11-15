@@ -10,15 +10,8 @@ import UIKit
 
 class MockNetworkService: NetworkServiceProtocol {
 
-    // MARK: - Counters
-    var fetchCityListInvocationCounter: Int = 0
-    var fetchCityPopulationInvocationCounter: Int = 0
-    var fetchCityRatingInvocationCounter: Int = 0
-
-    // MARK: - NetworkServiceProtocol
-    func fetchCityList(completion: @escaping ([City]?, Error?) -> Void) {
-        fetchCityListInvocationCounter += 1
-
+    // MARK: - Responses
+    var cityList: [City] = {
         let json = """
         [
             {
@@ -35,39 +28,58 @@ class MockNetworkService: NetworkServiceProtocol {
                 "id": "3D9CAC2A-8E94-4BD5-8046-49B0E621827F",
                 "name": "Delhi",
                 "image": "https://cdn.getyourguide.com/img/tour/5c981ca642f11.jpeg/146.jpg"
+            },
+            {
+                "id": "14650E3B-4BE7-4F78-AB32-F5B209F2D728",
+                "name": "Warszawa",
+                "image": "https://urbnews.pl/wp-content/uploads/2018/10/warszawa-widok.jpg"
             }
         ]
         """.data(using: .utf8)!
-
         let cities = try! JSONDecoder().decode([City].self, from: json)
-        completion(cities, nil)
-    }
+        return cities
+    }()
 
-    func fetchCityPopulation(id: UUID, completion: @escaping (CityPopulation?, Error?) -> Void) {
-        fetchCityPopulationInvocationCounter += 1
-
+    var cityPopulation: CityPopulation = {
         let json = """
         {
             "id": "14650E3B-4BE7-4F78-AB32-F5B209F2D728",
             "population": 1790658
         }
         """.data(using: .utf8)!
-
         let cityPopulation = try! JSONDecoder().decode(CityPopulation.self, from: json)
-        completion(cityPopulation, nil)
-    }
+        return cityPopulation
+    }()
 
-    func fetchCityRating(id: UUID, completion: @escaping (CityRating?, Error?) -> Void) {
-        fetchCityRatingInvocationCounter += 1
-
+    var cityRating: CityRating = {
         let json = """
         {
             "id": "14650E3B-4BE7-4F78-AB32-F5B209F2D728",
             "rating": 4.5
         }
         """.data(using: .utf8)!
-
         let cityRating = try! JSONDecoder().decode(CityRating.self, from: json)
+        return cityRating
+    }()
+
+    // MARK: - Counters
+    var fetchCityListInvocationCounter: Int = 0
+    var fetchCityPopulationInvocationCounter: Int = 0
+    var fetchCityRatingInvocationCounter: Int = 0
+
+    // MARK: - NetworkServiceProtocol
+    func fetchCityList(completion: @escaping ([City]?, Error?) -> Void) {
+        fetchCityListInvocationCounter += 1
+        completion(cityList, nil)
+    }
+
+    func fetchCityPopulation(id: UUID, completion: @escaping (CityPopulation?, Error?) -> Void) {
+        fetchCityPopulationInvocationCounter += 1
+        completion(cityPopulation, nil)
+    }
+
+    func fetchCityRating(id: UUID, completion: @escaping (CityRating?, Error?) -> Void) {
+        fetchCityRatingInvocationCounter += 1
         completion(cityRating, nil)
     }
 
