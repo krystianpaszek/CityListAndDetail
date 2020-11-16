@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		976F1FC22561C1E10022B534 /* FavoriteCitiesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */; };
 		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
 		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
 		97D36FB02560334000A59E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FAE2560334000A59E3E /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCitiesManagerTests.swift; sourceTree = "<group>"; };
 		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				97D3705425616FBE00A59E3E /* Mocks */,
 				97D3704C25616E8E00A59E3E /* DataStoreTests.swift */,
+				976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */,
 				97D36FC12560334200A59E3E /* Info.plist */,
 			);
 			path = HSBCRecruitmentTaskTests;
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976F1FC22561C1E10022B534 /* FavoriteCitiesManagerTests.swift in Sources */,
 				97D3706825618E0500A59E3E /* MockFavoriteCitiesManager.swift in Sources */,
 				97D3704D25616E8E00A59E3E /* DataStoreTests.swift in Sources */,
 				97D3705625616FDB00A59E3E /* MockNetworkService.swift in Sources */,
