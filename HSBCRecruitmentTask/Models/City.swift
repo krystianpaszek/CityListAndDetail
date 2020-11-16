@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Models could use their own, strongly typed identifiers
 struct City: Identifiable, Decodable {
     let id: UUID
     let name: String

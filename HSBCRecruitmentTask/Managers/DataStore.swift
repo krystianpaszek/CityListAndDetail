@@ -18,6 +18,7 @@ class DataStore: DataStoreProtocol {
     private let favoritesManager: CityFavoriting
 
     // MARK: - State
+    // In real life scenario a dedicated object could take care of managing cache
     private var cities: [UUID: City]?
 
     // MARK: - Initialization
