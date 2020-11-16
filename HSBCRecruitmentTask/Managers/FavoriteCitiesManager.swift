@@ -7,9 +7,9 @@
 
 import Foundation
 
-private let kUserDefaultsFavoriteCitiesKey = "favorite_cities"
-
 class FavoriteCitiesManager: CityFavoriting {
+
+    static let kUserDefaultsFavoriteCitiesKey = "favorite_cities"
 
     // MARK: - Dependencies
     let userDefaults: UserDefaults
@@ -17,15 +17,22 @@ class FavoriteCitiesManager: CityFavoriting {
     // MARK: - Properties
     var favoriteCities: Set<UUID> {
         get {
-            guard let savedData = userDefaults.object(forKey: kUserDefaultsFavoriteCitiesKey) else {
+            guard let savedData = userDefaults.object(forKey: Self.kUserDefaultsFavoriteCitiesKey) else {
                 return Set<UUID>()
             }
 
-            let cities = savedData as! Set<UUID>
-            return cities
+            guard let readableData = savedData as? [String] else {
+                assertionFailure("Saved data should be of [String] format")
+                return Set<UUID>()
+            }
+
+            let uuids = readableData.compactMap { UUID(uuidString: $0) }
+            let favoriteCities = Set(uuids)
+            return favoriteCities
         }
         set {
-            userDefaults.set(newValue, forKey: kUserDefaultsFavoriteCitiesKey)
+            let savableData = Array(newValue).map { $0.uuidString }
+            userDefaults.set(savableData, forKey: Self.kUserDefaultsFavoriteCitiesKey)
         }
     }
 
@@ -39,14 +46,18 @@ class FavoriteCitiesManager: CityFavoriting {
 // MARK: - CityFavoriting
 extension FavoriteCitiesManager {
     func addToFavorites(id: UUID) {
-
+        var currentFavorites = favoriteCities
+        currentFavorites.insert(id)
+        self.favoriteCities = currentFavorites
     }
 
     func removeFromFavorites(id: UUID) {
-
+        var currentFavorites = favoriteCities
+        currentFavorites.remove(id)
+        self.favoriteCities = currentFavorites
     }
 
     func isCityFavorite(id: UUID) -> Bool {
-        return false
+        return favoriteCities.contains(id)
     }
 }
