@@ -97,7 +97,7 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
     private func setupLoadingButton() {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.startAnimating()
-        
+
         let loadingItem = UIBarButtonItem(customView: activityIndicator)
         navigationItem.leftBarButtonItem = loadingItem
     }
@@ -116,7 +116,13 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
         let city = filtered(cities)[sender.tag]
 
         dataStore.removeFromFavorites(id: city.id)
-        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        if showOnlyFavorited {
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } else {
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
 
     @objc private func toggleFavoriteFiltering(sender: UIBarButtonItem) {
