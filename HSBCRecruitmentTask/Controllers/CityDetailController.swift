@@ -28,18 +28,21 @@ class CityDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+        view.backgroundColor = .systemBackground
 
-    /*
-    // MARK: - Navigation
+        guard let city = dataStore.getCity(withID: cityID) else {
+            // show error
+            return
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        title = city.name
+
+        setupViews(with: city)
     }
-    */
+
+    // MARK: - Setup
+    private func setupViews(with city: City) {
+        title = city.name
+    }
 
 }
