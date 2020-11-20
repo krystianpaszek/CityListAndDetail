@@ -10,6 +10,8 @@
 		976F1FC22561C1E10022B534 /* FavoriteCitiesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */; };
 		978E84842567F64400666333 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E84832567F64400666333 /* ModelTests.swift */; };
 		978E849225683E6300666333 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E849125683E6300666333 /* ImageDownloader.swift */; };
+		978E8499256844BC00666333 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E8497256844BC00666333 /* CityCell.swift */; };
+		978E849A256844BC00666333 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 978E8498256844BC00666333 /* CityCell.xib */; };
 		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
 		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
 		97D36FB22560334200A59E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB12560334200A59E3E /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCitiesManagerTests.swift; sourceTree = "<group>"; };
 		978E84832567F64400666333 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		978E849125683E6300666333 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		978E8497256844BC00666333 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		978E8498256844BC00666333 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		978E8496256844A800666333 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				978E8497256844BC00666333 /* CityCell.swift */,
+				978E8498256844BC00666333 /* CityCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		97D36F9C2560334000A59E3E = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		97D36FA72560334000A59E3E /* HSBCRecruitmentTask */ = {
 			isa = PBXGroup;
 			children = (
+				978E8496256844A800666333 /* Views */,
 				97D3701A256154A500A59E3E /* Controllers */,
 				97D37019256154A100A59E3E /* Managers */,
 				97D370152561548B00A59E3E /* Models */,
@@ -319,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978E849A256844BC00666333 /* CityCell.xib in Resources */,
 				97D36FB52560334200A59E3E /* LaunchScreen.storyboard in Resources */,
 				97D36FB22560334200A59E3E /* Assets.xcassets in Resources */,
 			);
@@ -356,6 +371,7 @@
 				97D3702F2561590400A59E3E /* DataStoreProtocol.swift in Sources */,
 				97D3705E25618CA900A59E3E /* CityFavoriting.swift in Sources */,
 				97D37024256154D100A59E3E /* DataStore.swift in Sources */,
+				978E8499256844BC00666333 /* CityCell.swift in Sources */,
 				97D370342561591100A59E3E /* NetworkServiceProtocol.swift in Sources */,
 				97D37025256154D100A59E3E /* NetworkService.swift in Sources */,
 				97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */,
