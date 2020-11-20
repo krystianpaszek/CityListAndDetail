@@ -24,6 +24,12 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+    private var showOnlyFavorited: Bool = false {
+        didSet {
+            setupFavoriteButton()
+            tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        }
+    }
 
     // MARK: - Views
     private var tableView: UITableView!
@@ -73,6 +79,16 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     private func setupNavigationItems() {
+        setupFavoriteButton()
+    }
+
+    private func setupFavoriteButton() {
+        let image = showOnlyFavorited ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        let favoriteFilterItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(toggleFavoriteFiltering(sender:)))
+        navigationItem.rightBarButtonItem = favoriteFilterItem
+    }
+
+
     // MARK: - Actions
     @objc private func favoriteCity(sender: UIButton) {
         guard case let .data(cities) = state else { return }
@@ -90,6 +106,8 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
 
+    @objc private func toggleFavoriteFiltering(sender: UIBarButtonItem) {
+        showOnlyFavorited.toggle()
     }
 
     // MARK: - Private functions
