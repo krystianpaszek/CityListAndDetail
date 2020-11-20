@@ -80,6 +80,7 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
 
     private func setupNavigationItems() {
         setupFavoriteButton()
+        setupRefreshButton()
     }
 
     private func setupFavoriteButton() {
@@ -88,6 +89,18 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationItem.rightBarButtonItem = favoriteFilterItem
     }
 
+    private func setupRefreshButton() {
+        let refreshItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadData))
+        navigationItem.leftBarButtonItem = refreshItem
+    }
+
+    private func setupLoadingButton() {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.startAnimating()
+        
+        let loadingItem = UIBarButtonItem(customView: activityIndicator)
+        navigationItem.leftBarButtonItem = loadingItem
+    }
 
     // MARK: - Actions
     @objc private func favoriteCity(sender: UIButton) {
@@ -133,9 +146,10 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
             return
 
         case .loading:
-            return
+            setupLoadingButton()
 
         case .data(_):
+            setupRefreshButton()
             tableView.reloadData()
             return
         }
