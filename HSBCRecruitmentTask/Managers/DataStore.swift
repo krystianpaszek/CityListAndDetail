@@ -57,6 +57,7 @@ extension DataStore {
         guard let cityPopulation = cities?[id]?.population, !reload else {
             networkService.fetchCityPopulation(id: id) { [weak self] cityPopulation, error in
                 self?.cities?[id]?.population = cityPopulation
+                completion(cityPopulation, error)
             }
             
             return
@@ -69,6 +70,7 @@ extension DataStore {
         guard let cityRating = cities?[id]?.rating, !reload else {
             networkService.fetchCityRating(id: id) { [weak self] cityRating, error in
                 self?.cities?[id]?.rating = cityRating
+                completion(cityRating, error)
             }
 
             return
