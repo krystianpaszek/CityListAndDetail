@@ -73,6 +73,23 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     private func setupNavigationItems() {
+    // MARK: - Actions
+    @objc private func favoriteCity(sender: UIButton) {
+        guard case let .data(cities) = state else { return }
+        let city = filtered(cities)[sender.tag]
+
+        dataStore.addToFavorites(id: city.id)
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
+
+    @objc private func unfavoriteCity(sender: UIButton) {
+        guard case let .data(cities) = state else { return }
+        let city = filtered(cities)[sender.tag]
+
+        dataStore.removeFromFavorites(id: city.id)
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
+
     }
 
     // MARK: - Private functions
@@ -138,22 +155,5 @@ extension CityListController {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    }
-
-    // MARK: - Actions
-    @objc private func favoriteCity(sender: UIButton) {
-        guard case let .data(cities) = state else { return }
-        let city = cities[sender.tag]
-
-        dataStore.addToFavorites(id: city.id)
-        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
-    }
-
-    @objc private func unfavoriteCity(sender: UIButton) {
-        guard case let .data(cities) = state else { return }
-        let city = cities[sender.tag]
-
-        dataStore.removeFromFavorites(id: city.id)
-        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
 }
