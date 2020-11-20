@@ -93,7 +93,12 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     // MARK: - Private functions
-    private func loadData() {
+    @objc private func reloadData() {
+        loadData(reload: true)
+    }
+
+    private func loadData(reload: Bool = false) {
+        self.state = .loading
         dataStore.getCityList(reload: false) { (cities, error) in
             guard let cities = cities else {
                 self.state = .error
