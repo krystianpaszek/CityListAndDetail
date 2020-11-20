@@ -7,9 +7,7 @@
 
 import UIKit
 
-private let kCityListCellIdentifier = "city_list_cell"
-
-class CityListController: UITableViewController {
+class CityListController: UITableViewController, CityCellActions {
 
     enum LoadingState {
         case loading, error, data(cities: [City])
@@ -59,7 +57,7 @@ class CityListController: UITableViewController {
 
     // MARK: - Setup
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCityListCellIdentifier)
+        tableView.register(UINib(nibName: "CityCell", bundle: nil), forCellReuseIdentifier: CityCell.identifier)
     }
 
     private func setupNavigationItems() {
@@ -87,28 +85,6 @@ class CityListController: UITableViewController {
     }
 
     // MARK: - Actions
-    @objc private func favoriteCity(sender: UIButton) {
-        guard case let .data(cities) = state else { return }
-        let city = filtered(cities)[sender.tag]
-
-        dataStore.addToFavorites(id: city.id)
-        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
-    }
-
-    @objc private func unfavoriteCity(sender: UIButton) {
-        guard case let .data(cities) = state else { return }
-        let city = filtered(cities)[sender.tag]
-
-        dataStore.removeFromFavorites(id: city.id)
-
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        if showOnlyFavorited {
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        } else {
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-        }
-    }
-
     @objc private func toggleFavoriteFiltering(sender: UIBarButtonItem) {
         showOnlyFavorited.toggle()
     }
@@ -146,11 +122,34 @@ class CityListController: UITableViewController {
     }
 
     private func filtered(_ cities: [City]) -> [City] {
-        guard showOnlyFavorited else {
-            return cities
-        }
+        showOnlyFavorited
+            ? cities.filter({ dataStore.isCityFavorite(id: $0.id) })
+            : cities
+    }
+}
 
-        return cities.filter({ dataStore.isCityFavorite(id: $0.id) })
+// MARK: CityCellActions
+extension CityListController {
+    func favorite(sender: UIButton) {
+        guard case let .data(cities) = state else { return }
+        let city = filtered(cities)[sender.tag]
+
+        dataStore.addToFavorites(id: city.id)
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+    }
+
+    func unfavorite(sender: UIButton) {
+        guard case let .data(cities) = state else { return }
+        let city = filtered(cities)[sender.tag]
+
+        dataStore.removeFromFavorites(id: city.id)
+
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        if showOnlyFavorited {
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } else {
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
 }
 
@@ -170,20 +169,16 @@ extension CityListController {
             return UITableViewCell()
         }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCityListCellIdentifier, for: indexPath)
+        let anyCell = tableView.dequeueReusableCell(withIdentifier: CityCell.identifier, for: indexPath)
+        guard let cell = anyCell as? CityCell else {
+            return UITableViewCell()
+        }
+
         let city = filtered(cities)[indexPath.row]
-
-        let favoriteButton = UIButton()
         let isFavorited = dataStore.isCityFavorite(id: city.id)
-        let image = isFavorited ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
-        let selector = isFavorited ? #selector(unfavoriteCity(sender:)) : #selector(favoriteCity(sender:))
-        favoriteButton.tag = indexPath.row
-        favoriteButton.setImage(image, for: .normal)
-        favoriteButton.addTarget(self, action: selector, for: .touchUpInside)
-        favoriteButton.sizeToFit()
-
-        cell.textLabel?.text = city.name
-        cell.accessoryView = favoriteButton
+        cell.imageDownloader = imageDownloader.fetchImage
+        cell.favoriteButton.tag = indexPath.row
+        cell.setup(with: city, isFavorited: isFavorited)
 
         return cell
     }
@@ -196,5 +191,9 @@ extension CityListController {
         let city = filtered(cities)[indexPath.row]
         let detailController = CityDetailController(cityID: city.id, dataStore: dataStore)
         navigationController?.pushViewController(detailController, animated: true)
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }
