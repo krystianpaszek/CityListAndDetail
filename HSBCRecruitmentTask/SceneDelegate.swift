@@ -21,8 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let networkService = NetworkService(configuration: .default)
         let favoritesManager = FavoriteCitiesManager(userDefaults: .standard)
         let dataStore = DataStore(networkService: networkService, favoritesManager: favoritesManager)
+        let imageDownloader = ImageDownloader()
 
-        let cityListController = CityListController(dataStore: dataStore)
+        let cityListController = CityListController(dataStore: dataStore, imageDownloader: imageDownloader)
         let navigationController = UINavigationController(rootViewController: cityListController)
 
         window?.rootViewController = navigationController

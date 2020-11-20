@@ -17,6 +17,7 @@ class CityListController: UITableViewController {
 
     // MARK: - Dependencies
     private let dataStore: DataStoreProtocol
+    private let imageDownloader: ImageDownloaderProtocol
     private var state: LoadingState = .loading {
         didSet {
             DispatchQueue.main.async {
@@ -32,8 +33,9 @@ class CityListController: UITableViewController {
     }
 
     // MARK: - Initialization
-    init(dataStore: DataStoreProtocol) {
+    init(dataStore: DataStoreProtocol, imageDownloader: ImageDownloader) {
         self.dataStore = dataStore
+        self.imageDownloader = imageDownloader
         super.init(nibName: nil, bundle: nil)
 
         setupNavigationItems()
