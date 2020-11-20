@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		976F1FC22561C1E10022B534 /* FavoriteCitiesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */; };
 		978E84842567F64400666333 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E84832567F64400666333 /* ModelTests.swift */; };
+		978E849225683E6300666333 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E849125683E6300666333 /* ImageDownloader.swift */; };
 		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
 		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
 		97D36FB22560334200A59E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB12560334200A59E3E /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		976F1FC12561C1E10022B534 /* FavoriteCitiesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCitiesManagerTests.swift; sourceTree = "<group>"; };
 		978E84832567F64400666333 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		978E849125683E6300666333 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				97D37023256154D000A59E3E /* NetworkService.swift */,
 				97D3704225616CF000A59E3E /* NetworkServiceConfiguration.swift */,
 				97D3704725616CFD00A59E3E /* NetworkServiceError.swift */,
+				978E849125683E6300666333 /* ImageDownloader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			files = (
 				97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */,
 				97D3703925616B5300A59E3E /* CityPopulation.swift in Sources */,
+				978E849225683E6300666333 /* ImageDownloader.swift in Sources */,
 				97D3701E256154C800A59E3E /* CityDetailController.swift in Sources */,
 				97D3703E25616B5B00A59E3E /* CityRating.swift in Sources */,
 				97D3701D256154C800A59E3E /* CityListController.swift in Sources */,
