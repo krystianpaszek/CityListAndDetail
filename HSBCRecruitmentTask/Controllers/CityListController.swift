@@ -121,6 +121,15 @@ extension CityListController {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCityListCellIdentifier, for: indexPath)
         let city = cities[indexPath.row]
 
+        let favoriteButton = UIButton()
+        let isFavorited = dataStore.isCityFavorite(id: city.id)
+        let image = isFavorited ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        let selector = isFavorited ? #selector(unfavoriteCity(sender:)) : #selector(favoriteCity(sender:))
+        favoriteButton.tag = indexPath.row
+        favoriteButton.setImage(image, for: .normal)
+        favoriteButton.addTarget(self, action: selector, for: .touchUpInside)
+        favoriteButton.sizeToFit()
+
         cell.textLabel?.text = city.name
         cell.accessoryView = favoriteButton
 
@@ -131,4 +140,20 @@ extension CityListController {
 
     }
 
+    // MARK: - Actions
+    @objc private func favoriteCity(sender: UIButton) {
+        guard case let .data(cities) = state else { return }
+        let city = cities[sender.tag]
+
+        dataStore.addToFavorites(id: city.id)
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
+
+    @objc private func unfavoriteCity(sender: UIButton) {
+        guard case let .data(cities) = state else { return }
+        let city = cities[sender.tag]
+
+        dataStore.removeFromFavorites(id: city.id)
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
 }
