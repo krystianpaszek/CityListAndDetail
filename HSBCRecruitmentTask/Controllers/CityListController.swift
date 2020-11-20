@@ -187,7 +187,12 @@ extension CityListController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailController = CityDetailController(dataStore: dataStore)
+        guard case let .data(cities) = state else {
+            return
+        }
+
+        let city = filtered(cities)[indexPath.row]
+        let detailController = CityDetailController(cityID: city.id, dataStore: dataStore)
         navigationController?.pushViewController(detailController, animated: true)
     }
 }
