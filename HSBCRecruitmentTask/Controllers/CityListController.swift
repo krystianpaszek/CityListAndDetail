@@ -41,7 +41,6 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,9 +118,11 @@ extension CityListController {
             return UITableViewCell()
         }
 
-        var cell = tableView.dequeueReusableCell(withIdentifier: kCityListCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCityListCellIdentifier, for: indexPath)
         let city = cities[indexPath.row]
-        configure(cell: &cell, with: city)
+
+        cell.textLabel?.text = city.name
+        cell.accessoryView = favoriteButton
 
         return cell
     }
@@ -129,8 +130,5 @@ extension CityListController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
-}
 
-private func configure(cell: inout UITableViewCell, with city: City) {
-    cell.textLabel?.text = city.name
 }
