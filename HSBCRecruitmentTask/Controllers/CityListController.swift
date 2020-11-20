@@ -9,7 +9,7 @@ import UIKit
 
 private let kCityListCellIdentifier = "city_list_cell"
 
-class CityListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CityListController: UITableViewController {
 
     enum LoadingState {
         case loading, error, data(cities: [City])
@@ -30,9 +30,6 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
             tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
     }
-
-    // MARK: - Views
-    private var tableView: UITableView!
 
     // MARK: - Initialization
     init(dataStore: DataStoreProtocol) {
@@ -60,22 +57,7 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // MARK: - Setup
     private func setupTableView() {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCityListCellIdentifier)
-
-        view.addSubview(tableView)
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: tableView.topAnchor),
-            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor),
-            view.leadingAnchor.constraint(equalTo: tableView.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
-        ])
-
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        self.tableView = tableView
     }
 
     private func setupNavigationItems() {
@@ -172,7 +154,7 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension CityListController {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch state {
         case .error, .loading:
             return 0
@@ -181,7 +163,7 @@ extension CityListController {
         }
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard case let .data(cities) = state else {
             return UITableViewCell()
         }
@@ -204,7 +186,8 @@ extension CityListController {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = CityDetailController(dataStore: dataStore)
+        navigationController?.pushViewController(detailController, animated: true)
     }
 }
