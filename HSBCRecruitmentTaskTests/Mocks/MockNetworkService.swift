@@ -10,9 +10,9 @@ import UIKit
 
 class MockNetworkService: NetworkServiceProtocol {
 
-    // MARK: - Responses
-    var cityList: [City] = {
-        let json = """
+    // MARK: - JSONs
+    var cityListJSON: Data {
+        """
         [
             {
                 "id": "02FCD224-6631-4FD7-BD35-91BCF0E90D15",
@@ -36,29 +36,39 @@ class MockNetworkService: NetworkServiceProtocol {
             }
         ]
         """.data(using: .utf8)!
-        let cities = try! JSONDecoder().decode([City].self, from: json)
-        return cities
-    }()
+    }
 
-    var cityPopulation: CityPopulation = {
-        let json = """
+    var cityPopulationJSON: Data {
+        """
         {
             "id": "14650E3B-4BE7-4F78-AB32-F5B209F2D728",
             "population": 1790658
         }
         """.data(using: .utf8)!
-        let cityPopulation = try! JSONDecoder().decode(CityPopulation.self, from: json)
-        return cityPopulation
-    }()
+    }
 
-    var cityRating: CityRating = {
-        let json = """
+    var cityRatingJSON: Data {
+        """
         {
             "id": "14650E3B-4BE7-4F78-AB32-F5B209F2D728",
             "rating": 4.5
         }
         """.data(using: .utf8)!
-        let cityRating = try! JSONDecoder().decode(CityRating.self, from: json)
+    }
+
+    // MARK: - Responses
+    lazy var cityList: [City] = {
+        let cities = try! JSONDecoder().decode([City].self, from: cityListJSON)
+        return cities
+    }()
+
+    lazy var cityPopulation: CityPopulation = {
+        let cityPopulation = try! JSONDecoder().decode(CityPopulation.self, from: cityPopulationJSON)
+        return cityPopulation
+    }()
+
+    lazy var cityRating: CityRating = {
+        let cityRating = try! JSONDecoder().decode(CityRating.self, from: cityRatingJSON)
         return cityRating
     }()
 
