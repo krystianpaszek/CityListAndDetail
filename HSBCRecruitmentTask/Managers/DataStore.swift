@@ -20,6 +20,9 @@ class DataStore: DataStoreProtocol {
     // MARK: - State
     // In real life scenario a dedicated object could take care of managing cache
     private var cities: [UUID: City]?
+    private var orderedCities: [City]? {
+        cities?.values.sorted(by: { $0.name < $1.name })
+    }
 
     // MARK: - Initialization
     init(networkService: NetworkServiceProtocol, favoritesManager: CityFavoriting) {
@@ -31,17 +34,16 @@ class DataStore: DataStoreProtocol {
 // MARK: - DataStoreProtocol
 extension DataStore {
     func getCityList(reload: Bool, completion: @escaping ([City]?, Error?) -> Void) {
-        guard let cities = cities, !reload else {
+        guard let orderedCities = orderedCities, !reload else {
             networkService.fetchCityList { [weak self] (cities, error) in
                 self?.cities = cities?.reduce(into: [UUID: City](), { $0[$1.id] = $1 })
-                completion(cities, error)
+                completion(self?.orderedCities, error)
             }
 
             return
         }
 
-        let values: [City] = Array(cities.values)
-        completion(values, nil)
+        completion(orderedCities, nil)
     }
 
     func getCity(id: UUID, completion: @escaping (City?, Error?) -> Void) {
