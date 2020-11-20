@@ -24,10 +24,6 @@ class DataStoreTests: XCTestCase {
         dataStore = DataStore(networkService: mockNetworkService, favoritesManager: mockFavoriteCitiesManager)
     }
 
-    // test that it adds city to favorites
-    // test that if removes city from favorites
-    // test that it doesn't add city multiple times, so many adds -> one remove should be enough
-
     // MARK: - Tests
     func testThatItDoesntHitNetworkAfterInitialFetch() throws {
         // when
@@ -52,8 +48,73 @@ class DataStoreTests: XCTestCase {
         XCTAssertEqual(mockNetworkService.fetchCityListInvocationCounter, 3)
     }
 
+    func testThatItReturnsTheSameCities() {
+        // given
+        let expectation1 = XCTestExpectation(description: "Got first result")
+        let expectation2 = XCTestExpectation(description: "Got second result")
+        let expectation3 = XCTestExpectation(description: "Got third result")
+        var result1, result2, result3: [City]?
+
+        // when
+        dataStore.getCityList(reload: false, completion: { cities, _ in
+            result1 = cities
+            expectation1.fulfill()
+        })
+        dataStore.getCityList(reload: false, completion: { cities, _ in
+            result2 = cities
+            expectation2.fulfill()
+        })
+        dataStore.getCityList(reload: false, completion: { cities, _ in
+            result3 = cities
+            expectation3.fulfill()
+        })
+
+        // then
+        wait(for: [expectation1, expectation2, expectation3], timeout: kAsyncTimeout)
+        XCTAssertEqual(result1, result2)
+        XCTAssertEqual(result2, result3)
+    }
+
+    func testThatItReturnsPopulationForAGivenCity() {
+        // given
+        let id = mockNetworkService.cityPopulation.id
+        let expectation = XCTestExpectation(description: "Got population")
+        var result: CityPopulation?
+
+        // when
+        dataStore.getCityList(reload: false) { (_, _) in
+            self.dataStore.getCityPopulation(reload: false, id: id) { (population, _) in
+                result = population
+                expectation.fulfill()
+            }
+        }
+
+        // then
+        wait(for: [expectation], timeout: kAsyncTimeout)
+        XCTAssertEqual(result?.id, id)
+    }
+
+    func testThatItReturnsRatingForAGivenCity() {
+        // given
+        let id = mockNetworkService.cityRating.id
+        let expectation = XCTestExpectation(description: "Got rating")
+        var result: CityRating?
+
+        // when
+        dataStore.getCityList(reload: false) { (_, _) in
+            self.dataStore.getCityRating(reload: false, id: id) { (rating, error) in
+                result = rating
+                expectation.fulfill()
+            }
+        }
+
+        // then
+        wait(for: [expectation], timeout: kAsyncTimeout)
+        XCTAssertEqual(result?.id, id)
+    }
+
     func testThatItHitsNetworkWhenReloadingCityRating() throws {
-        let expectation = XCTestExpectation(description: "Load cities")
+        let expectation = XCTestExpectation(description: "Got cities")
 
         // given
         let id = mockNetworkService.cityRating.id
@@ -67,15 +128,15 @@ class DataStoreTests: XCTestCase {
             self.dataStore.getCityRating(reload: false, id: id, completion:  { _, _ in } )
 
             // then
-            XCTAssertEqual(self.mockNetworkService.fetchCityRatingInvocationCounter, 3)
             expectation.fulfill()
         }
 
         wait(for: [expectation], timeout: kAsyncTimeout)
+        XCTAssertEqual(self.mockNetworkService.fetchCityRatingInvocationCounter, 3)
     }
 
     func testThatItHitsNetworkWhenReloadingCityPopulation() throws {
-        let expectation = XCTestExpectation(description: "Load cities")
+        let expectation = XCTestExpectation(description: "Got cities")
 
         // given
         let id = mockNetworkService.cityPopulation.id
@@ -89,11 +150,29 @@ class DataStoreTests: XCTestCase {
             self.dataStore.getCityPopulation(reload: false, id: id, completion:  { _, _ in } )
 
             // then
-            XCTAssertEqual(self.mockNetworkService.fetchCityPopulationInvocationCounter, 3)
             expectation.fulfill()
         }
 
         wait(for: [expectation], timeout: kAsyncTimeout)
+        XCTAssertEqual(self.mockNetworkService.fetchCityPopulationInvocationCounter, 3)
+    }
+
+    func testThatItRelaysFavoriteManagerCalls() {
+        // given
+        guard let id = mockNetworkService.cityList.first?.id else {
+            XCTFail()
+            return
+        }
+
+        // when
+        dataStore.addToFavorites(id: id)
+        dataStore.removeFromFavorites(id: id)
+        _ = dataStore.isCityFavorite(id: id)
+
+        // then
+        XCTAssertEqual(mockFavoriteCitiesManager.addToFavoritesInvocationCount, 1)
+        XCTAssertEqual(mockFavoriteCitiesManager.removeFromFavoritesInvocationCount, 1)
+        XCTAssertEqual(mockFavoriteCitiesManager.isCityFavoriteInvocationCount, 1)
     }
 
 }
