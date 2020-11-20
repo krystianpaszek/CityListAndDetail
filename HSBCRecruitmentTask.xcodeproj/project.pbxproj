@@ -11,7 +11,6 @@
 		978E84842567F64400666333 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E84832567F64400666333 /* ModelTests.swift */; };
 		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
 		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
-		97D36FB02560334000A59E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FAE2560334000A59E3E /* Main.storyboard */; };
 		97D36FB22560334200A59E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB12560334200A59E3E /* Assets.xcassets */; };
 		97D36FB52560334200A59E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB32560334200A59E3E /* LaunchScreen.storyboard */; };
 		97D36FCB2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FCA2560334200A59E3E /* HSBCRecruitmentTaskUITests.swift */; };
@@ -56,7 +55,6 @@
 		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97D36FAF2560334000A59E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97D36FB12560334200A59E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97D36FB42560334200A59E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97D36FB62560334200A59E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				97D36FE2256151A600A59E3E /* Protocols */,
 				97D36FA82560334000A59E3E /* AppDelegate.swift */,
 				97D36FAA2560334000A59E3E /* SceneDelegate.swift */,
-				97D36FAE2560334000A59E3E /* Main.storyboard */,
 				97D36FB12560334200A59E3E /* Assets.xcassets */,
 				97D36FB32560334200A59E3E /* LaunchScreen.storyboard */,
 				97D36FB62560334200A59E3E /* Info.plist */,
@@ -321,7 +318,6 @@
 			files = (
 				97D36FB52560334200A59E3E /* LaunchScreen.storyboard in Resources */,
 				97D36FB22560334200A59E3E /* Assets.xcassets in Resources */,
-				97D36FB02560334000A59E3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,14 +396,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		97D36FAE2560334000A59E3E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97D36FAF2560334000A59E3E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		97D36FB32560334200A59E3E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
