@@ -122,6 +122,14 @@ class CityListController: UIViewController, UITableViewDataSource, UITableViewDe
             return
         }
     }
+
+    private func filtered(_ cities: [City]) -> [City] {
+        guard showOnlyFavorited else {
+            return cities
+        }
+
+        return cities.filter({ dataStore.isCityFavorite(id: $0.id) })
+    }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
@@ -131,7 +139,7 @@ extension CityListController {
         case .error, .loading:
             return 0
         case .data(let cities):
-            return cities.count
+            return filtered(cities).count
         }
     }
 
@@ -141,7 +149,7 @@ extension CityListController {
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: kCityListCellIdentifier, for: indexPath)
-        let city = cities[indexPath.row]
+        let city = filtered(cities)[indexPath.row]
 
         let favoriteButton = UIButton()
         let isFavorited = dataStore.isCityFavorite(id: city.id)
