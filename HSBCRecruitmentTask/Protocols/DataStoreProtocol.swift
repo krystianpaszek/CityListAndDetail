@@ -9,9 +9,10 @@ import Foundation
 
 protocol DataStoreProtocol {
     func getCityList(reload: Bool, completion: @escaping ([City]?, Error?) -> Void)
-    func getCity(id: UUID, completion: @escaping (City?, Error?) -> Void)
     func getCityPopulation(reload: Bool, id: UUID, completion: @escaping (CityPopulation?, Error?) -> Void)
     func getCityRating(reload: Bool, id: UUID, completion: @escaping (CityRating?, Error?) -> Void)
+
+    func getCity(withID id: UUID) -> City?
 
     func isCityFavorite(id: UUID) -> Bool
     func addToFavorites(id: UUID)

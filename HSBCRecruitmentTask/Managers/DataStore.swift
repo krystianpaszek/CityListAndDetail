@@ -46,13 +46,9 @@ extension DataStore {
         completion(orderedCities, nil)
     }
 
-    func getCity(id: UUID, completion: @escaping (City?, Error?) -> Void) {
-        guard let city = cities?[id] else {
-            completion(nil, DataStoreError.noResourceFound)
-            return
-        }
-
-        completion(city, nil)
+    func getCity(withID id: UUID) -> City? {
+        guard let city = cities?[id] else { return nil }
+        return city
     }
 
     func getCityPopulation(reload: Bool, id: UUID, completion: @escaping (CityPopulation?, Error?) -> Void) {
