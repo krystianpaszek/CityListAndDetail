@@ -189,7 +189,7 @@ extension CityListController {
         }
 
         let city = filtered(cities)[indexPath.row]
-        let detailController = CityDetailController(cityID: city.id, dataStore: dataStore)
+        let detailController = CityDetailController(cityID: city.id, dataStore: dataStore, imageDownloader: imageDownloader)
         navigationController?.pushViewController(detailController, animated: true)
     }
 

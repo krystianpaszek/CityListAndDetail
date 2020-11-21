@@ -215,8 +215,8 @@
 		97D3701A256154A500A59E3E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				97D3701C256154C700A59E3E /* CityDetailController.swift */,
 				97D3701B256154C700A59E3E /* CityListController.swift */,
+				97D3701C256154C700A59E3E /* CityDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
