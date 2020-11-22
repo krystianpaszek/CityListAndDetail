@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ywx-eT-TbE">
-                    <rect key="frame" x="132" y="333.5" width="150" height="239.5"/>
+                    <rect key="frame" x="132" y="312.5" width="150" height="239.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ppw-c0-wUA">
                             <rect key="frame" x="0.0" y="1" width="150" height="148"/>
@@ -50,10 +50,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Ywx-eT-TbE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="IpQ-Z3-Rzu"/>
-                <constraint firstItem="Ywx-eT-TbE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="L0s-UU-Ul3"/>
-                <constraint firstItem="Ywx-eT-TbE" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="U2n-1H-RnY"/>
-                <constraint firstItem="Ywx-eT-TbE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hXe-hF-cHM"/>
+                <constraint firstItem="Ywx-eT-TbE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="IpQ-Z3-Rzu"/>
+                <constraint firstItem="Ywx-eT-TbE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="L0s-UU-Ul3"/>
+                <constraint firstItem="Ywx-eT-TbE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-16" id="U2n-1H-RnY"/>
+                <constraint firstItem="Ywx-eT-TbE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hXe-hF-cHM"/>
             </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </view>
