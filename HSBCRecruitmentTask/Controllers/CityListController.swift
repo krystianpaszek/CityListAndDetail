@@ -16,11 +16,11 @@ class CityListController: UITableViewController, CityCellActions {
     // MARK: - Dependencies
     private let dataStore: DataStoreProtocol
     private let imageDownloader: ImageDownloaderProtocol
+
+    // MARK: - State
     private var state: LoadingState = .loading {
         didSet {
-            DispatchQueue.main.async {
-                self.apply(self.state)
-            }
+            apply(state)
         }
     }
     private var showOnlyFavorited: Bool = false {
@@ -107,17 +107,19 @@ class CityListController: UITableViewController, CityCellActions {
     }
 
     private func apply(_ state: LoadingState) {
-        switch state {
-        case .error:
-            return
+        DispatchQueue.main.async {
+            switch state {
+            case .error:
+                return
 
-        case .loading:
-            setupLoadingButton()
+            case .loading:
+                self.setupLoadingButton()
 
-        case .data(_):
-            setupRefreshButton()
-            tableView.reloadData()
-            return
+            case .data(_):
+                self.setupRefreshButton()
+                self.tableView.reloadData()
+                return
+            }
         }
     }
 
