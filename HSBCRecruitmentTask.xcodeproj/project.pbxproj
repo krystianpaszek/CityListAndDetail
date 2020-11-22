@@ -14,6 +14,7 @@
 		978E849A256844BC00666333 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 978E8498256844BC00666333 /* CityCell.xib */; };
 		97BD6FD4256A7B0600CE64E7 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD6FD2256A7B0600CE64E7 /* ErrorController.swift */; };
 		97BD6FD5256A7B0600CE64E7 /* ErrorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BD6FD3256A7B0600CE64E7 /* ErrorController.xib */; };
+		97BD6FDD256A856A00CE64E7 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD6FDC256A856A00CE64E7 /* RatingsViewController.swift */; };
 		97D36FA92560334000A59E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FA82560334000A59E3E /* AppDelegate.swift */; };
 		97D36FAB2560334000A59E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D36FAA2560334000A59E3E /* SceneDelegate.swift */; };
 		97D36FB22560334200A59E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D36FB12560334200A59E3E /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		978E8498256844BC00666333 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		97BD6FD2256A7B0600CE64E7 /* ErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		97BD6FD3256A7B0600CE64E7 /* ErrorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorController.xib; sourceTree = "<group>"; };
+		97BD6FDC256A856A00CE64E7 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
 		97D36FA52560334000A59E3E /* HSBCRecruitmentTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSBCRecruitmentTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D36FA82560334000A59E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97D36FAA2560334000A59E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				97D3701C256154C700A59E3E /* CityDetailController.swift */,
 				97BD6FD2256A7B0600CE64E7 /* ErrorController.swift */,
 				97BD6FD3256A7B0600CE64E7 /* ErrorController.xib */,
+				97BD6FDC256A856A00CE64E7 /* RatingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				97D3704325616CF000A59E3E /* NetworkServiceConfiguration.swift in Sources */,
 				97D3702F2561590400A59E3E /* DataStoreProtocol.swift in Sources */,
 				97D3705E25618CA900A59E3E /* CityFavoriting.swift in Sources */,
+				97BD6FDD256A856A00CE64E7 /* RatingsViewController.swift in Sources */,
 				97D37024256154D100A59E3E /* DataStore.swift in Sources */,
 				978E8499256844BC00666333 /* CityCell.swift in Sources */,
 				97D370342561591100A59E3E /* NetworkServiceProtocol.swift in Sources */,
