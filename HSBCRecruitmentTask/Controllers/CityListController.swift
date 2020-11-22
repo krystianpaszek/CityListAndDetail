@@ -30,6 +30,9 @@ class CityListController: UITableViewController, CityCellActions {
         }
     }
 
+    // MARK: - Views
+    private var errorController: UIViewController?
+
     // MARK: - Initialization
     init(dataStore: DataStoreProtocol, imageDownloader: ImageDownloader) {
         self.dataStore = dataStore
@@ -84,6 +87,32 @@ class CityListController: UITableViewController, CityCellActions {
         navigationItem.leftBarButtonItem = loadingItem
     }
 
+    private func showError() {
+        let errorController = ErrorController(nibName: "ErrorController", bundle: nil)
+
+        view.addSubview(errorController.view)
+        errorController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            view.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: errorController.view.leadingAnchor),
+            view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: errorController.view.trailingAnchor),
+            view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: errorController.view.topAnchor),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: errorController.view.bottomAnchor),
+        ])
+
+        addChild(errorController)
+        errorController.didMove(toParent: self)
+
+        errorController.view.layoutIfNeeded()
+        self.errorController = errorController
+    }
+
+    private func hideError() {
+        errorController?.willMove(toParent: nil)
+        errorController?.removeFromParent()
+        errorController?.view.removeFromSuperview()
+    }
+
     // MARK: - Actions
     @objc private func toggleFavoriteFiltering(sender: UIBarButtonItem) {
         showOnlyFavorited.toggle()
@@ -110,9 +139,11 @@ class CityListController: UITableViewController, CityCellActions {
         DispatchQueue.main.async {
             switch state {
             case .error:
-                return
+                self.setupRefreshButton()
+                self.showError()
 
             case .loading:
+                self.hideError()
                 self.setupLoadingButton()
 
             case .data(_):
