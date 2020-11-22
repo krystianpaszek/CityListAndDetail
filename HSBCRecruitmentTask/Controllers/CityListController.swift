@@ -103,7 +103,6 @@ class CityListController: UITableViewController, CityCellActions {
         addChild(errorController)
         errorController.didMove(toParent: self)
 
-        errorController.view.layoutIfNeeded()
         self.errorController = errorController
     }
 
