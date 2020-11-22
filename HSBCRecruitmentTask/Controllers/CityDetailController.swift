@@ -66,6 +66,7 @@ class CityDetailController: UIViewController {
         stackView.addArrangedSubview(setupImageThumbnail(city: city))
         stackView.addArrangedSubview(setupPopulationRow())
         stackView.addArrangedSubview(setupRatingRow())
+        stackView.addArrangedSubview(setupRatingBreakdownRow())
 
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
@@ -104,6 +105,36 @@ class CityDetailController: UIViewController {
         return ratingStackView
     }
 
+    private func setupRatingBreakdownRow() -> UIView {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = kStackViewInset
+
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(showRatingBreakdown), for: .touchUpInside)
+        button.setTitle("Ratings breakdown", for: .normal)
+
+        stackView.addArrangedSubview(button)
+        return stackView
+    }
+
+    // MARK: - Actions
+    @objc private func showRatingBreakdown() {
+        let ratingBreakdown = CityRatingBreakdown(
+            oneStarRatingsCount: Int.random(in: 0...9999),
+            twoStarRatingsCount: Int.random(in: 0...9999),
+            threeStarRatingsCount: Int.random(in: 0...9999),
+            fourStarRatingsCount: Int.random(in: 0...9999),
+            fiveStarRatingsCount: Int.random(in: 0...9999)
+        )
+
+        let ratingBreakdownController = RatingsViewController(ratingBreakdown: ratingBreakdown)
+        let navigationController = UINavigationController(rootViewController: ratingBreakdownController)
+        present(navigationController, animated: true)
+    }
+
     // MARK: - Private functions
     private func loadData() {
         let group = DispatchGroup()
@@ -137,7 +168,6 @@ class CityDetailController: UIViewController {
 
         stackView.addArrangedSubview(label)
     }
-
 
 }
 
